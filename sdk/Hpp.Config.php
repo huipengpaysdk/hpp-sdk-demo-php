@@ -9,6 +9,10 @@ class Config {
     const X_MT_SNO = 'HPPPN20157083500001';//商户号
     const SIGN_TOKEN = 'Hl0kp77WbCF8m0dF+IzOsQ==';//Aes私钥
 
-    const URL_OF_PAY = 'https://cashier.huipengpay.com/api/v1/pay';//sdk支付
-    const URL_OF_ORDERQUERY = 'https://cashier.huipengpay.com/api/v1/order-query';//订单状态查询
+    //内测地址
+    const URL_OF_PAY = 'http://cashiertest.huipengpay.com/api/v1/pay';//sdk支付
+    const URL_OF_ORDERQUERY = 'http://cashiertest.huipengpay.com/api/v1/order-query';//订单状态查询
+
+//    const URL_OF_PAY = 'https://cashier.huipengpay.com/api/v1/pay';//sdk支付
+//    const URL_OF_ORDERQUERY = 'https://cashier.huipengpay.com/api/v1/order-query';//订单状态查询
 }
