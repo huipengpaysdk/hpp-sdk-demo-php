@@ -40,7 +40,9 @@ abstract class Protocol {
      * 清空values,重新加入
      */
     protected function setValues($_values) {
-        $this->values = $_values;
+        if (!is_null($_values)) {
+            $this->values = $_values;
+        }
     }
 
     /**
@@ -207,9 +209,11 @@ class PayResponse extends BaseApiResponse {
 
     public function  getWXQRPayUrl() {
         $extra = $this->getValue('extra');
-        return array_key_exists('code_url', $extra)
-            ? $extra['code_url']
-            : null;
+        return is_null($extra)
+            ? null
+            : array_key_exists('code_url', $extra)
+                ? $extra['code_url']
+                : null;
     }
 
 }

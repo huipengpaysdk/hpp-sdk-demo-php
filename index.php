@@ -104,11 +104,15 @@
             $.post('/pay.php', $('#fmMain').serialize())
                 .done(function (data) {
                     console.log(data);
-                    $('#fmFinish')
-                        .children(':first-child').val(data.orderNumber);
-                    $('#fmJump')
-                        .children(':first-child').val(data.orderNumber).end()
-                        .submit();
+                    if (data.orderNumber) {
+                        $('#fmFinish')
+                            .children(':first-child').val(data.orderNumber);
+                        $('#fmJump')
+                            .children(':first-child').val(data.orderNumber).end()
+                            .submit();
+                    }else{
+                        alert('出错了!');
+                    }
                 })
                 .fail(function () {
                     alert('出错了!');
